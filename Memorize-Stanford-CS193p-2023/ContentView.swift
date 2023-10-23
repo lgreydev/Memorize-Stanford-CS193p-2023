@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            CardView(isFaceUp: true)
+            CardView()
             CardView()
             CardView()
             CardView()
@@ -21,7 +21,7 @@ struct ContentView: View {
 }
 
 struct CardView: View {
-    var isFaceUp = false
+    @State var isFaceUp = false
     
     var body: some View {
         ZStack {
@@ -33,6 +33,9 @@ struct CardView: View {
             } else {
                 base
             }
+        }
+        .onTapGesture {
+            isFaceUp.toggle()
         }
     }
 }
