@@ -36,7 +36,6 @@ struct CardView: View {
                     .font(.largeTitle)
             } else {
                 RoundedRectangle(cornerRadius: 12)
-                    .foregroundStyle(.orange)
             }
         }
     }
