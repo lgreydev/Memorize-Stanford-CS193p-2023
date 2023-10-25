@@ -14,36 +14,49 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                ForEach(0..<cardCount, id:\.self) { index in
-                    CardView(content: emojis[index])
-                }
-            }
-            .foregroundStyle(.orange)
-            
-            HStack {
-                Button(action: {
-                    if  cardCount > 1 {
-                        cardCount -= 1
-                    }
-                }, label: {
-                    Image(systemName: "rectangle.stack.fill.badge.minus")
-                })
-                
-                Spacer()
-                
-                Button(action: {
-                    if  cardCount < emojis.count {
-                        cardCount += 1
-                    }
-                }, label: {
-                    Image(systemName: "rectangle.stack.fill.badge.plus")
-                })
-            }
-            .imageScale(.large)
-            .font(.largeTitle)
+            cards
+            cardCountAdjustment
         }
         .padding()
+    }
+    
+    var cards: some View {
+        HStack {
+            ForEach(0..<cardCount, id:\.self) { index in
+                CardView(content: emojis[index])
+            }
+        }
+        .foregroundStyle(.orange)
+    }
+    
+    var cardCountAdjustment: some View {
+        HStack {
+            cardRemover
+            Spacer()
+            cardAdder
+        }
+        .imageScale(.large)
+        .font(.largeTitle)
+    }
+    
+    var cardRemover: some View {
+        Button(action: {
+            if  cardCount > 1 {
+                cardCount -= 1
+            }
+        }, label: {
+            Image(systemName: "rectangle.stack.fill.badge.minus")
+        })
+    }
+    
+    var cardAdder: some View {
+        Button(action: {
+            if  cardCount < emojis.count {
+                cardCount += 1
+            }
+        }, label: {
+            Image(systemName: "rectangle.stack.fill.badge.plus")
+        })
     }
 }
 
