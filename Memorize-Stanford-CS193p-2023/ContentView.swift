@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["🎃", "👻", "🎃", "😈"]
+    let emojis = ["🎃", "👻", "🎃", "😈", "😱", "🧙‍♂️", "🧌", "🧟‍♀️", "🕸️", "🕷️", "🍭", "💀"]
     
     var body: some View {
         HStack {
