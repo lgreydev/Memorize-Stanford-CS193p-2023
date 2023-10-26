@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["🎃", "👻", "🎃", "😈", "😱", "🧙‍♂️", "🧌", "🧟‍♀️", "🕸️", "🕷️", "🍭", "💀"]
+    let emojis = ["🎃", "👻", "😈", "😱", "🧙‍♂️", "🧌", "🧟‍♀️", "🕸️", "🕷️", "🍭", "💀"]
     
     @State var cardCount = 4
     
@@ -39,30 +39,27 @@ struct ContentView: View {
         .font(.largeTitle)
     }
     
+    func cardCountAdjustment(by offset: Int, symbol: String) -> some View {
+       Button {
+            cardCount += offset
+        } label: {
+            Image(systemName: symbol)
+        }
+        .disabled(cardCount + offset < 1 || cardCount + offset > emojis.count)
+    }
+    
     var cardRemover: some View {
-        Button(action: {
-            if  cardCount > 1 {
-                cardCount -= 1
-            }
-        }, label: {
-            Image(systemName: "rectangle.stack.fill.badge.minus")
-        })
+        cardCountAdjustment(by: -1, symbol: "rectangle.stack.fill.badge.minus")
     }
     
     var cardAdder: some View {
-        Button(action: {
-            if  cardCount < emojis.count {
-                cardCount += 1
-            }
-        }, label: {
-            Image(systemName: "rectangle.stack.fill.badge.plus")
-        })
+        cardCountAdjustment(by: 1, symbol: "rectangle.stack.fill.badge.plus")
     }
 }
 
 struct CardView: View {
     let content: String
-    @State var isFaceUp = false
+    @State var isFaceUp = true
     
     var body: some View {
         ZStack {
