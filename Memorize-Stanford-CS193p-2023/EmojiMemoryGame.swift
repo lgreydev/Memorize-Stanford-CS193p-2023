@@ -5,4 +5,8 @@
 //  Created by Sergey Lukaschuk on 2023-11-04.
 //
 
-import Foundation
+import SwiftUI
+
+class EmojiMemoryGame {
+    var model: MemoryGame<String>?
+}
