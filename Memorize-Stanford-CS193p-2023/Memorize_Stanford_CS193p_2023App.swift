@@ -11,7 +11,7 @@ import SwiftUI
 struct Memorize_Stanford_CS193p_2023App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmojiMemoryGameView()
         }
     }
 }
