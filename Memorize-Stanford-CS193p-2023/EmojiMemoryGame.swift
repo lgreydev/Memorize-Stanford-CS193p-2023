@@ -8,5 +8,13 @@
 import SwiftUI
 
 class EmojiMemoryGame {
-    var model: MemoryGame<String>?
+    private var model: MemoryGame<String>
+    
+    var cards: Array<MemoryGame<String>.Card> {
+        return model.cards
+    }
+    
+    func choose(card: MemoryGame<String>.Card) {
+        model.choose(card: card)
+    }
 }
