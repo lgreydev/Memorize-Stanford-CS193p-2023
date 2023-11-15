@@ -29,11 +29,14 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         print(cards)
     }
     
-    struct Card: Equatable, Identifiable {
+    struct Card: Equatable, Identifiable, CustomDebugStringConvertible {
         var isFaceUp: Bool = true
-        var isMatched: Bool = true
+        var isMatched: Bool = false
         var content: CardContent
         
         var id: String
+        var debugDescription: String {
+            return "\(id): \(content) \(isFaceUp ? "up" : "down") \(isMatched ? "matched" : "")"
+        }
     }
 }
