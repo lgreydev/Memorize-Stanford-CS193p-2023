@@ -21,18 +21,9 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     mutating func choose(_ card: Card) {
-        print("chose \(card)") // FIXME: print
-        let chosenIndex = index(of: card)
-        cards[chosenIndex].isFaceUp.toggle()
-    }
-    
-    func index(of card: Card) -> Int {
-        for index in cards.indices {
-            if cards[index].id == card.id {
-                return index
-            }
+        if let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) {
+            cards[chosenIndex].isFaceUp.toggle()
         }
-        return 0 // FIXME: bogus
     }
     
     mutating func shuffle() {
