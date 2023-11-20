@@ -13,11 +13,8 @@ struct EmojiMemoryGameView: View {
     var body: some View {
         
         VStack {
-            ScrollView {
-                cards
-                    .animation(.default, value: viewModel.cards)
-            }
-            
+            cards.animation(.default, value: viewModel.cards)
+        
             Button("Shuffle") {
                 viewModel.shuffle()
             }
@@ -52,8 +49,21 @@ struct EmojiMemoryGameView: View {
         count: Int,
         size: CGSize,
         arAspectRatio aspectRatio: CGFloat) -> CGFloat {
-        return 95
-    }
+            let count = CGFloat(count)
+            var columnCount = 1.0
+            
+            repeat {
+                let width = size.width / columnCount
+                let hight = width / aspectRatio
+        
+                let rowCount = (count / columnCount).rounded(.up)
+                if rowCount * hight < size.height {
+                    return (size.width / columnCount).rounded(.down)
+                }
+                columnCount += 1
+            } while columnCount < count
+            return min(size.width / count, size.height * aspectRatio).rounded(.down)
+        }
 }
 
 struct CardView: View {
