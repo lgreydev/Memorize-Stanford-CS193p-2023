@@ -10,31 +10,30 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
+    private let aspectRatio: CGFloat = 2/3
+    
     var body: some View {
-        
         VStack {
             cards.animation(.default, value: viewModel.cards)
-        
+            
             Button("Shuffle") {
                 viewModel.shuffle()
             }
         }
         .padding()
     }
-    
-    var cards: some View {
+
+    private var cards: some View {
         GeometryReader { geometry in
-            
             let gridItemSize = gridItemWidthThatFits(
                 count: viewModel.cards.count,
                 size: geometry.size,
-                arAspectRatio: 2/3)
-            
+                atAspectRatio: aspectRatio)
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: gridItemSize), spacing: 0)], spacing: 0) {
                 ForEach(viewModel.cards) { card in
                     CardView(card)
-                        .aspectRatio(2/3, contentMode: .fit)
+                        .aspectRatio(aspectRatio, contentMode: .fit)
                         .padding(4)
                         .onTapGesture {
                             viewModel.choose(card)
@@ -45,17 +44,17 @@ struct EmojiMemoryGameView: View {
         .foregroundStyle(.orange)
     }
     
-    func gridItemWidthThatFits(
+    private func gridItemWidthThatFits(
         count: Int,
         size: CGSize,
-        arAspectRatio aspectRatio: CGFloat) -> CGFloat {
+        atAspectRatio aspectRatio: CGFloat) -> CGFloat {
             let count = CGFloat(count)
             var columnCount = 1.0
             
             repeat {
                 let width = size.width / columnCount
                 let hight = width / aspectRatio
-        
+                
                 let rowCount = (count / columnCount).rounded(.up)
                 if rowCount * hight < size.height {
                     return (size.width / columnCount).rounded(.down)
@@ -84,7 +83,7 @@ struct CardView: View {
                     .minimumScaleFactor(0.01)
                     .aspectRatio(1, contentMode: .fit)
             }
-                .opacity(card.isFaceUp ? 1 : 0)
+            .opacity(card.isFaceUp ? 1 : 0)
             base.fill()
                 .opacity(card.isFaceUp ? 0: 1)
         }
