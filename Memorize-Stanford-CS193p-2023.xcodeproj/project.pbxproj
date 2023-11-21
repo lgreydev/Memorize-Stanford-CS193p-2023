@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E61771C2B0C3071009DC9D5 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61771B2B0C3071009DC9D5 /* MemoryGame.swift */; };
 		5E7E9E4D2AE07A26005CB463 /* Memorize_Stanford_CS193p_2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9E4C2AE07A26005CB463 /* Memorize_Stanford_CS193p_2023App.swift */; };
 		5E7E9E4F2AE07A26005CB463 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E9E4E2AE07A26005CB463 /* EmojiMemoryGameView.swift */; };
 		5E7E9E512AE07A27005CB463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E7E9E502AE07A27005CB463 /* Assets.xcassets */; };
 		5E7E9E542AE07A27005CB463 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E7E9E532AE07A27005CB463 /* Preview Assets.xcassets */; };
-		5E99B0932AF6544900D8E8F1 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E99B0922AF6544900D8E8F1 /* MemoryGame.swift */; };
 		5E99B0972AF657FD00D8E8F1 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E99B0962AF657FD00D8E8F1 /* EmojiMemoryGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E61771B2B0C3071009DC9D5 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		5E7E9E492AE07A26005CB463 /* Memorize-Stanford-CS193p-2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memorize-Stanford-CS193p-2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E7E9E4C2AE07A26005CB463 /* Memorize_Stanford_CS193p_2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memorize_Stanford_CS193p_2023App.swift; sourceTree = "<group>"; };
 		5E7E9E4E2AE07A26005CB463 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		5E7E9E502AE07A27005CB463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E7E9E532AE07A27005CB463 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5E99B0922AF6544900D8E8F1 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = SOURCE_ROOT; };
 		5E99B0962AF657FD00D8E8F1 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,12 +55,12 @@
 		5E7E9E4B2AE07A26005CB463 /* Memorize-Stanford-CS193p-2023 */ = {
 			isa = PBXGroup;
 			children = (
-				5E99B0922AF6544900D8E8F1 /* MemoryGame.swift */,
 				5E99B0962AF657FD00D8E8F1 /* EmojiMemoryGame.swift */,
 				5E7E9E4C2AE07A26005CB463 /* Memorize_Stanford_CS193p_2023App.swift */,
 				5E7E9E4E2AE07A26005CB463 /* EmojiMemoryGameView.swift */,
 				5E7E9E502AE07A27005CB463 /* Assets.xcassets */,
 				5E7E9E522AE07A27005CB463 /* Preview Content */,
+				5E61771B2B0C3071009DC9D5 /* MemoryGame.swift */,
 			);
 			path = "Memorize-Stanford-CS193p-2023";
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			files = (
 				5E7E9E4F2AE07A26005CB463 /* EmojiMemoryGameView.swift in Sources */,
 				5E7E9E4D2AE07A26005CB463 /* Memorize_Stanford_CS193p_2023App.swift in Sources */,
-				5E99B0932AF6544900D8E8F1 /* MemoryGame.swift in Sources */,
+				5E61771C2B0C3071009DC9D5 /* MemoryGame.swift in Sources */,
 				5E99B0972AF657FD00D8E8F1 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
