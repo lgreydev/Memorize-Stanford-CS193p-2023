@@ -55,12 +55,12 @@
 		5E7E9E4B2AE07A26005CB463 /* Memorize-Stanford-CS193p-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				5E61771B2B0C3071009DC9D5 /* MemoryGame.swift */,
 				5E99B0962AF657FD00D8E8F1 /* EmojiMemoryGame.swift */,
 				5E7E9E4C2AE07A26005CB463 /* Memorize_Stanford_CS193p_2023App.swift */,
 				5E7E9E4E2AE07A26005CB463 /* EmojiMemoryGameView.swift */,
 				5E7E9E502AE07A27005CB463 /* Assets.xcassets */,
 				5E7E9E522AE07A27005CB463 /* Preview Content */,
-				5E61771B2B0C3071009DC9D5 /* MemoryGame.swift */,
 			);
 			path = "Memorize-Stanford-CS193p-2023";
 			sourceTree = "<group>";
