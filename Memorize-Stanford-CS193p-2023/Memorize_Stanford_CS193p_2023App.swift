@@ -10,10 +10,16 @@ import SwiftUI
 @main
 struct Memorize_Stanford_CS193p_2023App: App {
     var body: some Scene {
-        @StateObject var game = EmojiMemoryGame()
-        
         WindowGroup {
-            EmojiMemoryGameView(viewModel: game)
+            ContentView()
         }
+    }
+}
+
+struct ContentView: View {
+    @StateObject var game = EmojiMemoryGame()
+
+    var body: some View {
+        EmojiMemoryGameView(viewModel: game)
     }
 }
