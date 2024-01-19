@@ -49,6 +49,11 @@ struct CardView: View {
     }
 }
 
+
+#Preview {
+    EmojiMemoryGameView(viewModel: EmojiMemoryGame())
+}
+
 struct ContentView_Previews: PreviewProvider {
     typealias Card = CardView.Card
     
